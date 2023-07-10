@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            width: 150px;
+            height: 60px;
+            border: 1px solid;
+            border-radius: 50px;
+            background: #000;
+            position: relative;
+            margin-top: 125px;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.2s all ease-in-out;
+
+        }
+
+        .switch {
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: orangered;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button.active .switch {
+            left: 90px;
+        }
+
+        .change {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button">
+        <div class="switch">
+
+        </div>
+    </div>
+    <script>
+        let body = document.getElementsByTagName("body");
+        let switchbutton = document.getElementsByClassName("switch");
+        let button = document.getElementsByClassName("button");
+        console.log(button);
+        button[0].addEventListener("click", () => {
+            button[0].classList.toggle("active")
+            body[0].classList.toggle("change");
+        })
+    </script>
+</body>
+
+</html>
